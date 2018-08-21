@@ -25,7 +25,7 @@ RUN tar xf kyototycoon.tar.gz \
     --enable-static \
     --enable-lua \
     --enable-sec-openssl \
-    --with-lua=%{buildroot}/dep/lua-5.1.4 \
+    --with-lua=./dep/lua-5.1.4 \
     && make \
     && make install \
     && rm -rf /opt/kyototycoon/ \
