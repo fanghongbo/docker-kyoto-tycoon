@@ -1,11 +1,12 @@
 # Kyotocabinet & kyototycoon
 
 官档： http://fallabs.com/kyotocabinet/spex.html#tutorial
+
 官档： http://fallabs.com/kyototycoon/spex.html#tutorial
 
 介绍： Kyotocabinet 是一款轻量级嵌入式数据库,kyototycoon 是 kyotocabinet 的网络接口程序
 
-   Kyoto Tycoon是一个具有自动过期机制的轻量级数据库，主要用于处理缓存数据和各种应用程序的持久性数据。KT同时也是Kyoto Cabinet的网络接口。尽管KC拥有高性能和高并发性，但你会被麻烦于多个进程共享同一个数据库，或者远端进程访问数据库。KT提供了并发和远程连接来管理KC。
+Kyoto Tycoon是一个具有自动过期机制的轻量级数据库，主要用于处理缓存数据和各种应用程序的持久性数据。KT同时也是Kyoto Cabinet的网络接口。尽管KC拥有高性能和高并发性，但你会被麻烦于多个进程共享同一个数据库，或者远端进程访问数据库。KT提供了并发和远程连接来管理KC。
    服务器的高并发性由Linux/*BSD的thread-pool模型和epoll/kqueue机制来实现。它可以在同一时间处理1W连接请求。因为是由epoll/kqueue等系统功能进行封装，所以KT具备较高的可移植性，可以工作在几乎所有的UNIX系统或者Windows系统上。
    KT支持热备份功能，并不需要停止服务来拷贝数据文件。操作日志支持两个备份文件之间的差异。甚者，可以实现异步复制的功能。一个服务器发送操作日志到另外一个服务器，会评估操作日志并立即更新它们的数据库保持和master数据库一致。
    KT和连接它的客户端采用HTTP协议进行沟通。所以你可以采用几乎所有流行的编程语言去编写客户端应用。支持GET,HEAD,PUT,DELETE方法。
